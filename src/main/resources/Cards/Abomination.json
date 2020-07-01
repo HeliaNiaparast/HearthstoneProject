@@ -1,0 +1,13 @@
+{
+  "HP": 4,
+  "attack": 4,
+  "subType": "",
+  "manaCost": 5,
+  "name": "Abomination",
+  "rarity": "Rare",
+  "heroClass": "Neutral",
+  "type": "Minion",
+  "description": "Taunt. Deathrattle: Deal 2 damage to ALL characters.",
+  "price": 7,
+  "useNum": 0
+}

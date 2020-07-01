@@ -1,0 +1,178 @@
+{
+  "deck": [
+    {
+      "manaCost": 4,
+      "name": "Polymorph",
+      "rarity": "Free",
+      "heroClass": "Mage",
+      "type": "Spell",
+      "description": "Transform a minion into a 1/1 Sheep.",
+      "price": 4,
+      "useNum": 0
+    },
+    {
+      "manaCost": 4,
+      "name": "Polymorph",
+      "rarity": "Free",
+      "heroClass": "Mage",
+      "type": "Spell",
+      "description": "Transform a minion into a 1/1 Sheep.",
+      "price": 4,
+      "useNum": 0
+    },
+    {
+      "HP": 1,
+      "attack": 1,
+      "subType": "",
+      "manaCost": 0,
+      "name": "Wisp",
+      "rarity": "Common",
+      "heroClass": "Neutral",
+      "type": "Minion",
+      "description": "",
+      "price": 1,
+      "useNum": 0
+    },
+    {
+      "HP": 1,
+      "attack": 1,
+      "subType": "",
+      "manaCost": 0,
+      "name": "Wisp",
+      "rarity": "Common",
+      "heroClass": "Neutral",
+      "type": "Minion",
+      "description": "",
+      "price": 1,
+      "useNum": 0
+    },
+    {
+      "HP": 2,
+      "attack": 0,
+      "subType": "",
+      "manaCost": 2,
+      "name": "SerpentWard",
+      "rarity": "Rare",
+      "heroClass": "Neutral",
+      "type": "Minion",
+      "description": "At the end of your turn, deal 2 damage to the enemy hero.",
+      "price": 4,
+      "useNum": 0
+    },
+    {
+      "HP": 2,
+      "attack": 0,
+      "subType": "",
+      "manaCost": 2,
+      "name": "SerpentWard",
+      "rarity": "Rare",
+      "heroClass": "Neutral",
+      "type": "Minion",
+      "description": "At the end of your turn, deal 2 damage to the enemy hero.",
+      "price": 4,
+      "useNum": 0
+    },
+    {
+      "manaCost": 4,
+      "name": "ShadowMadness",
+      "rarity": "Rare",
+      "heroClass": "Neutral",
+      "type": "Spell",
+      "description": "Gain control of an enemy minion with 3 or less Attack until end of turn.",
+      "price": 6,
+      "useNum": 0
+    },
+    {
+      "manaCost": 4,
+      "name": "ShadowMadness",
+      "rarity": "Rare",
+      "heroClass": "Neutral",
+      "type": "Spell",
+      "description": "Gain control of an enemy minion with 3 or less Attack until end of turn.",
+      "price": 6,
+      "useNum": 0
+    },
+    {
+      "HP": 4,
+      "attack": 4,
+      "subType": "",
+      "manaCost": 5,
+      "name": "Abomination",
+      "rarity": "Rare",
+      "heroClass": "Neutral",
+      "type": "Minion",
+      "description": "Taunt. Deathrattle: Deal 2 damage to ALL characters.",
+      "price": 7,
+      "useNum": 0
+    },
+    {
+      "HP": 4,
+      "attack": 4,
+      "subType": "",
+      "manaCost": 5,
+      "name": "Abomination",
+      "rarity": "Rare",
+      "heroClass": "Neutral",
+      "type": "Minion",
+      "description": "Taunt. Deathrattle: Deal 2 damage to ALL characters.",
+      "price": 7,
+      "useNum": 0
+    },
+    {
+      "manaCost": 3,
+      "name": "DeadlyShot",
+      "rarity": "Common",
+      "heroClass": "Neutral",
+      "type": "Spell",
+      "description": "Destroy a random enemy minion.",
+      "price": 4,
+      "useNum": 0
+    },
+    {
+      "manaCost": 3,
+      "name": "DeadlyShot",
+      "rarity": "Common",
+      "heroClass": "Neutral",
+      "type": "Spell",
+      "description": "Destroy a random enemy minion.",
+      "price": 4,
+      "useNum": 0
+    },
+    {
+      "manaCost": 6,
+      "name": "Eureka",
+      "rarity": "Rare",
+      "heroClass": "Neutral",
+      "type": "Spell",
+      "description": "Summon a copy of a random minion from your hand.",
+      "price": 8,
+      "useNum": 0
+    },
+    {
+      "manaCost": 6,
+      "name": "Eureka",
+      "rarity": "Rare",
+      "heroClass": "Neutral",
+      "type": "Spell",
+      "description": "Summon a copy of a random minion from your hand.",
+      "price": 8,
+      "useNum": 0
+    }
+  ],
+  "cards": [
+    {
+      "manaCost": 4,
+      "name": "Polymorph",
+      "rarity": "Free",
+      "heroClass": "Mage",
+      "type": "Spell",
+      "description": "Transform a minion into a 1/1 Sheep.",
+      "price": 4,
+      "useNum": 0
+    }
+  ],
+  "HP": 30,
+  "heroClass": "Mage",
+  "heroPower": "Fireblast: Can deal 1 damage to any character with cost of 2 manas",
+  "specialPower": "Spells cost them 2 manas less than their regular manacost"
+}

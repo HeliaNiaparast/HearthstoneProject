@@ -1,0 +1,10 @@
+{
+  "manaCost": 1,
+  "name": "FriendlySmith",
+  "rarity": "Common",
+  "heroClass": "Rogue",
+  "type": "Spell",
+  "description": "Discover a weapon from any class. Add it to your Adventure Deck with +2/+2.",
+  "price": 2,
+  "useNum": 0
+}

@@ -1,0 +1,13 @@
+{
+  "HP": 10,
+  "attack": 5,
+  "subType": "",
+  "manaCost": 7,
+  "name": "Linecracker",
+  "rarity": "Epic",
+  "heroClass": "Neutral",
+  "type": "Minion",
+  "description": "Overkill: Double this minion\u0027s Attack.",
+  "price": 11,
+  "useNum": 0
+}

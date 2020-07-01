@@ -1,0 +1,13 @@
+{
+  "HP": 7,
+  "attack": 9,
+  "subType": "",
+  "manaCost": 9,
+  "name": "BullDozer",
+  "rarity": "Common",
+  "heroClass": "Neutral",
+  "type": "Minion",
+  "description": "Divine Shield",
+  "price": 10,
+  "useNum": 0
+}

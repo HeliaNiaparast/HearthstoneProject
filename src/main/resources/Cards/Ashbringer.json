@@ -1,0 +1,12 @@
+{
+  "attack": 5,
+  "durability": 3,
+  "manaCost": 5,
+  "name": "Ashbringer",
+  "rarity": "Common",
+  "heroClass": "Neutral",
+  "type": "Weapon",
+  "description": "",
+  "price": 6,
+  "useNum": 0
+}

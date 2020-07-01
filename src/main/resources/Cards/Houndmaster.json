@@ -1,0 +1,13 @@
+{
+  "HP": 3,
+  "attack": 4,
+  "subType": "",
+  "manaCost": 4,
+  "name": "Houndmaster",
+  "rarity": "Free",
+  "heroClass": "Hunter",
+  "type": "Minion",
+  "description": "Battlecry: Give a friendly Beast +2/+2 and Taunt.",
+  "price": 4,
+  "useNum": 0
+}

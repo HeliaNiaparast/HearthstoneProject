@@ -1,0 +1,13 @@
+{
+  "HP": 4,
+  "attack": 4,
+  "subType": "",
+  "manaCost": 5,
+  "name": "FrostwolfWarlord",
+  "rarity": "Free",
+  "heroClass": "Neutral",
+  "type": "Minion",
+  "description": "Battlecry: Gain +1/+1 for each other friendly minion on the battlefield.",
+  "price": 5,
+  "useNum": 0
+}

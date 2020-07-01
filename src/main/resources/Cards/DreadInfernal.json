@@ -1,0 +1,13 @@
+{
+  "HP": 6,
+  "attack": 6,
+  "subType": "",
+  "manaCost": 6,
+  "name": "DreadInfernal",
+  "rarity": "Free",
+  "heroClass": "Warlock",
+  "type": "Minion",
+  "description": "Battlecry: Deal 1 damage to ALL other characters.",
+  "price": 6,
+  "useNum": 0
+}

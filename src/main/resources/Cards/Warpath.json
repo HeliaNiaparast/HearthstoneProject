@@ -1,0 +1,10 @@
+{
+  "manaCost": 2,
+  "name": "Warpath",
+  "rarity": "Common",
+  "heroClass": "Neutral",
+  "type": "Spell",
+  "description": "Echo Deal 1 damage to all minions.",
+  "price": 3,
+  "useNum": 0
+}

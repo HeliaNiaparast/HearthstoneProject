@@ -1,0 +1,10 @@
+{
+  "manaCost": 4,
+  "name": "Fireball",
+  "rarity": "Free",
+  "heroClass": "Mage",
+  "type": "Spell",
+  "description": "Deal 6 damage.",
+  "price": 4,
+  "useNum": 0
+}

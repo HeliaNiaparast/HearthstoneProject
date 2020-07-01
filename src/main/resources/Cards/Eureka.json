@@ -1,0 +1,10 @@
+{
+  "manaCost": 6,
+  "name": "Eureka",
+  "rarity": "Rare",
+  "heroClass": "Neutral",
+  "type": "Spell",
+  "description": "Summon a copy of a random minion from your hand.",
+  "price": 8,
+  "useNum": 0
+}

@@ -1,0 +1,13 @@
+{
+  "HP": 3,
+  "attack": 1,
+  "subType": "",
+  "manaCost": 2,
+  "name": "ViciousScalehide",
+  "rarity": "Common",
+  "heroClass": "Neutral",
+  "type": "Minion",
+  "description": "Lifesteal Rush",
+  "price": 3,
+  "useNum": 0
+}

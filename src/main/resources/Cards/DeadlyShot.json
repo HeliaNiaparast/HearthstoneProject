@@ -1,0 +1,10 @@
+{
+  "manaCost": 3,
+  "name": "DeadlyShot",
+  "rarity": "Common",
+  "heroClass": "Neutral",
+  "type": "Spell",
+  "description": "Destroy a random enemy minion.",
+  "price": 4,
+  "useNum": 0
+}

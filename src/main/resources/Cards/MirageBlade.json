@@ -1,0 +1,12 @@
+{
+  "attack": 3,
+  "durability": 2,
+  "manaCost": 2,
+  "name": "MirageBlade",
+  "rarity": "Common",
+  "heroClass": "Neutral",
+  "type": "Weapon",
+  "description": "Your hero is Immune while attacking.",
+  "price": 3,
+  "useNum": 0
+}
