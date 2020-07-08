@@ -1,0 +1,13 @@
+{
+  "HP": 2,
+  "attack": 0,
+  "subType": "",
+  "manaCost": 2,
+  "name": "SerpentWard",
+  "rarity": "Rare",
+  "heroClass": "Neutral",
+  "type": "Minion",
+  "description": "At the end of your turn, deal 2 damage to the enemy hero.",
+  "price": 4,
+  "useNum": 0
+}

@@ -1,4 +1,7 @@
+/*
 package graphics;
+
+import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -10,10 +13,13 @@ public class Main {
 	final static JFrame frame = new JFrame("Hearthstone");
 	
 	public static void main(String[] args) {
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(Constants.width, Constants.height);
-		frame.setResizable(false);
-		frame.add(Game.getInstance());
-		frame.setVisible(true);
+		EventQueue.invokeLater(() -> {
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setSize(Constants.width, Constants.height);
+				frame.setResizable(false);
+				frame.add(Game.getInstance());
+				frame.setVisible(true);
+		});
 	}
 }
+*/

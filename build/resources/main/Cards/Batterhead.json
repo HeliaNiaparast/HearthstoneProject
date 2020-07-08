@@ -1,0 +1,13 @@
+{
+  "HP": 12,
+  "attack": 3,
+  "subType": "",
+  "manaCost": 8,
+  "name": "Batterhead",
+  "rarity": "Epic",
+  "heroClass": "Neutral",
+  "type": "Minion",
+  "description": "Rush. After this attacks and kills a minion, it may attack again.",
+  "price": 12,
+  "useNum": 0
+}

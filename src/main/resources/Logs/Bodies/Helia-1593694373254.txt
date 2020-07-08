@@ -1,0 +1,8 @@
+Navigate 2020-07-02 17:23:09.132 Collections
+See Deck 2020-07-02 17:23:10.761 FirstDeck
+Delete Deck 2020-07-02 17:23:14.442 FirstDeck
+Remove Deck 2020-07-02 17:23:14.442 FirstDeck
+Exit 2020-07-02 17:23:17.658 
+Sign in 2020-07-02 17:28:17.224 
+Navigate 2020-07-02 17:28:23.641 Collections
+Exit 2020-07-02 17:28:28.624 

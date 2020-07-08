@@ -1,0 +1,10 @@
+{
+  "manaCost": 7,
+  "name": "Sprint",
+  "rarity": "Free",
+  "heroClass": "Neutral",
+  "type": "Spell",
+  "description": "Draw 4 cards.",
+  "price": 7,
+  "useNum": 0
+}

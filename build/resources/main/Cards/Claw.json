@@ -1,0 +1,10 @@
+{
+  "manaCost": 1,
+  "name": "Claw",
+  "rarity": "Free",
+  "heroClass": "Neutral",
+  "type": "Spell",
+  "description": "Give your hero +2 Attack this turn. Gain 2 Armor.",
+  "price": 1,
+  "useNum": 0
+}

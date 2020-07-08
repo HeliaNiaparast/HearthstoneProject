@@ -25,8 +25,10 @@ import javax.swing.border.Border;
 
 import cards.Card;
 import cards.Deck;
+import factories.ButtonFactory;
 import game.LogWriter;
 import game.Player;
+import main.Main;
 
 public class Collection extends JPanel implements ActionListener {
 
@@ -36,11 +38,6 @@ public class Collection extends JPanel implements ActionListener {
 	private JTextField manaFilter;
 	private JTextField searchField;
 	private JLabel manaLabel;
-	private JButton allCards;
-	private JButton ownedCards;
-	private JButton notOwnedCards;
-	private JButton menu;
-	private JButton exit;
 	private Game game;
 	private JPanel screen;
 	private JScrollPane screenScroll;
@@ -70,20 +67,8 @@ public class Collection extends JPanel implements ActionListener {
 		
 		add(deckScroll);
 		
-		JButton newDeck = new JButton("New Deck");
-		newDeck.setBounds(Constants.newDeck);
-		newDeck.setFont(Constants.newDeckFont);
-		newDeck.setForeground(Color.BLACK);
-		newDeck.setBackground(Constants.newDeckColor);
-		newDeck.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				newDeck();
-				
-			}
-		});
-		add(newDeck);
+		add(ButtonFactory.getButton("New Deck", Constants.newDeck, Constants.newDeckColor, Color.BLACK,
+				Constants.newDeckFont, null, (e) -> newDeck()));
 		
 		JLabel myDecks = new JLabel("My Decks");
 		myDecks.setBounds(Constants.myDeck);
@@ -113,54 +98,20 @@ public class Collection extends JPanel implements ActionListener {
 		searchField.setText("");
 		add(searchField);
 		
-		allCards = new JButton("All Cards");
-		allCards.setBounds(Constants.allCards);
-		allCards.setBackground(Constants.newDeckColor);
-		allCards.setForeground(Color.BLACK);
-		allCards.setFont(Constants.newDeckFont);
-		allCards.setActionCommand("All");
-		allCards.addActionListener(this);
-		add(allCards);
+		add(ButtonFactory.getButton("All Cards", Constants.allCards, Constants.newDeckColor, Color.BLACK,
+				Constants.newDeckFont, "All", this));
 		
-		ownedCards = new JButton();
-		ownedCards.setBounds(Constants.ownedCards);
-		ownedCards.setOpaque(false);
-		ownedCards.setContentAreaFilled(false);
-		ownedCards.setBorderPainted(false);
-		path = "/Images/CardIcon";
-		ownedCards.setIcon(getIcon(path, 50, 50));
-		ownedCards.setActionCommand("Owned");
-		ownedCards.addActionListener(this);
-		add(ownedCards);
+		add(ButtonFactory.getButton(Constants.ownedCards, false, false, false, getIcon("/Images/CardIcon", 50, 50)
+				, "Owned", this));
 		
-		notOwnedCards = new JButton();
-		notOwnedCards.setBounds(Constants.notOwnedCards);
-		notOwnedCards.setOpaque(false);
-		notOwnedCards.setContentAreaFilled(false);
-		notOwnedCards.setBorderPainted(false);
-		path = "/Images/CardIconBW";
-		notOwnedCards.setIcon(getIcon(path, 50, 50));
-		notOwnedCards.setActionCommand("NotOwned");
-		notOwnedCards.addActionListener(this);
-		add(notOwnedCards);
+		add(ButtonFactory.getButton(Constants.notOwnedCards, false, false, false, getIcon("/Images/CardIconBW", 50, 50)
+				, "NotOwned", this));
 		
-		menu = new JButton("Menu");
-		menu.setBounds(Constants.collectionsMenu);
-		menu.setBackground(Constants.collectionsExitColor);
-		menu.setForeground(Color.BLACK);
-		menu.setFont(Constants.newDeckFont);
-		menu.setActionCommand("Menu");
-		menu.addActionListener(this);
-		add(menu);
+		add(ButtonFactory.getButton("Menu", Constants.collectionsMenu, Constants.collectionsExitColor, Color.BLACK,
+				Constants.newDeckFont, "Menu", this));
 		
-		exit = new JButton("Exit");
-		exit.setBounds(Constants.collectionsExit);
-		exit.setBackground(Constants.collectionsExitColor);
-		exit.setForeground(Color.BLACK);
-		exit.setFont(Constants.newDeckFont);
-		exit.setActionCommand("Exit");
-		exit.addActionListener(this);
-		add(exit);
+		add(ButtonFactory.getButton("Exit", Constants.collectionsExit, Constants.collectionsExitColor, Color.BLACK,
+				Constants.newDeckFont, "Exit", this));
 		
 		coinIcon = new JLabel();
 		coinIcon.setBounds(Constants.collectionsCoin);
@@ -191,59 +142,23 @@ public class Collection extends JPanel implements ActionListener {
 		screen.setBorder(border);
 		add(screenScroll);
 		
-		JButton mage = new JButton("Mage");
-		mage.setBounds(Constants.Mage);
-		mage.setBackground(Constants.collectionsExitColor);
-		mage.setForeground(Color.BLACK);
-		mage.setFont(Constants.errorFont);
-		mage.setActionCommand("Mage");
-		mage.addActionListener(this);
-		add(mage);
+		add(ButtonFactory.getButton("Mage", Constants.Mage, Constants.collectionsExitColor, Color.BLACK,
+				Constants.errorFont, "Mage", this));
 		
-		JButton rogue = new JButton("Rogue");
-		rogue.setBounds(Constants.Rogue);
-		rogue.setBackground(Constants.collectionsExitColor);
-		rogue.setForeground(Color.BLACK);
-		rogue.setFont(Constants.errorFont);
-		rogue.setActionCommand("Rogue");
-		rogue.addActionListener(this);
-		add(rogue);
+		add(ButtonFactory.getButton("Rogue", Constants.Rogue, Constants.collectionsExitColor, Color.BLACK,
+				Constants.errorFont, "Rogue", this));
 		
-		JButton warlock = new JButton("Warlock");
-		warlock.setBounds(Constants.Warlock);
-		warlock.setBackground(Constants.collectionsExitColor);
-		warlock.setForeground(Color.BLACK);
-		warlock.setFont(Constants.errorFont);
-		warlock.setActionCommand("Warlock");
-		warlock.addActionListener(this);
-		add(warlock);
+		add(ButtonFactory.getButton("Warlock", Constants.Warlock, Constants.collectionsExitColor, Color.BLACK,
+				Constants.errorFont, "Warlock", this));
 		
-		JButton Paladin = new JButton("Paladin");
-		Paladin.setBounds(Constants.Paladin);
-		Paladin.setBackground(Constants.collectionsExitColor);
-		Paladin.setForeground(Color.BLACK);
-		Paladin.setFont(Constants.errorFont);
-		Paladin.setActionCommand("Paladin");
-		Paladin.addActionListener(this);
-		add(Paladin);
+		add(ButtonFactory.getButton("Paladin", Constants.Paladin, Constants.collectionsExitColor, Color.BLACK,
+				Constants.errorFont, "Paladin", this));
 		
-		JButton Hunter = new JButton("Hunter");
-		Hunter.setBounds(Constants.Hunter);
-		Hunter.setBackground(Constants.collectionsExitColor);
-		Hunter.setForeground(Color.BLACK);
-		Hunter.setFont(Constants.errorFont);
-		Hunter.setActionCommand("Hunter");
-		Hunter.addActionListener(this);
-		add(Hunter);
+		add(ButtonFactory.getButton("Hunter", Constants.Hunter, Constants.collectionsExitColor, Color.BLACK,
+				Constants.errorFont, "Hunter", this));
 		
-		JButton neutral = new JButton("Neutral");
-		neutral.setBounds(Constants.neutral);
-		neutral.setBackground(Constants.collectionsExitColor);
-		neutral.setForeground(Color.BLACK);
-		neutral.setFont(Constants.errorFont);
-		neutral.setActionCommand("Neutral");
-		neutral.addActionListener(this);
-		add(neutral);
+		add(ButtonFactory.getButton("Neutral", Constants.neutral, Constants.collectionsExitColor, Color.BLACK,
+				Constants.errorFont, "Neutral", this));
 		
 		successLabel = new JLabel("");
 		successLabel.setBounds(Constants.collectionsError);
@@ -255,11 +170,8 @@ public class Collection extends JPanel implements ActionListener {
 		errorLabel.setForeground(Color.RED);
 		errorLabel.setFont(Constants.errorFont);
 		
-		choose = new JButton("Choose Deck");
-		choose.setBounds(Constants.choose);
-		choose.setBackground(Constants.collectionsExitColor);
-		choose.setForeground(Color.BLACK);
-		choose.setFont(Constants.errorFont);
+		choose = ButtonFactory.getButton("Choose Deck", Constants.choose, Constants.collectionsExitColor, Color.BLACK,
+				Constants.errorFont, null, null);
 		choose.addActionListener(new ActionListener() {
 			
 			@Override
@@ -272,19 +184,12 @@ public class Collection extends JPanel implements ActionListener {
 					}
 			}
 		});
+		add(choose);
 		
-		delete = new JButton("Delete Deck");
-		delete.setBounds(Constants.delete);
-		delete.setBackground(Constants.collectionsExitColor);
-		delete.setForeground(Color.BLACK);
-		delete.setFont(Constants.errorFont);
-		delete.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				showDeleteMessage(delete.getActionCommand());
-			}
-		});
+		delete = ButtonFactory.getButton("Delete Deck", Constants.delete, Constants.collectionsExitColor, Color.BLACK,
+				Constants.errorFont, null, null);
+		delete.addActionListener(e -> showDeleteMessage(delete.getActionCommand()));
+		add(delete);
 	
 		loadScreen("All");
 		
@@ -344,21 +249,7 @@ public class Collection extends JPanel implements ActionListener {
 		
 		loadScreen("DeleteMessage");
 	}
-	
-	private int convert(String s) {
-		if(s.equals(""))	return 0;
-		
-		int ans = 0;
-		for(int i = s.length()-1; i >= 0; i --) {
-			if(s.charAt(i) < '0' || s.charAt(i) > '9')
-				return 0;
-			ans *= 10;
-			ans += s.charAt(i) - '0';
-		}
-		
-		return ans;
-	} 
-	
+ 	
 	private void loadDeckButtons() {
 		decks.removeAll();
 		for(Deck deck : player.getDecks()) {
@@ -863,7 +754,13 @@ public class Collection extends JPanel implements ActionListener {
 		remove(choose);
 		remove(delete);
 		
-		int mana = convert(manaFilter.getText());
+		int mana;
+		try {
+			mana = Integer.valueOf(manaFilter.getText());
+		} catch(NumberFormatException e) {
+			mana = 0;
+		}
+		
 		String search = searchField.getText();
 		
 		if(command.equals("All")) {

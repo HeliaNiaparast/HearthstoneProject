@@ -1,8 +1,12 @@
 package game;
 
+import java.io.File;
 import java.util.ArrayList;
-import cards.*;
-import heroes.*;
+
+import cards.Card;
+import cards.Deck;
+import heroes.Hero;
+import heroes.Mage;
 
 public class Player {
 	private String username;
@@ -16,6 +20,7 @@ public class Player {
 	private ArrayList <Card> lockedCards;
 	private ArrayList <String> heroes;
 	private Shop shop;
+	private Hero hero;
 	
 	public Player(){}
 	
@@ -30,6 +35,8 @@ public class Player {
 		String[] heroes = new String[] {"Mage", "Rogue", "Warlock", "Paladin", "Hunter"};
 		for(int i = 0; i < 5; i ++)
 			this.heroes.add(heroes[i]);
+		
+		setHero(new Mage());
 	}
 	
 	private void cardsInit() {
@@ -47,7 +54,8 @@ public class Player {
 		
 		ArrayList<Card> shopLocked = new ArrayList<>();
 		
-		ArrayList<Card> gameCards = CardDesign.getCards();
+//		ArrayList<Card> gameCards = CardDesign.getCards();
+		ArrayList<Card> gameCards = getAllGameCards();
 		for(int i = 10; i < gameCards.size(); i += 4) {
 			cards.add(gameCards.get(i));
 			cards.add(gameCards.get(i+1));
@@ -119,6 +127,14 @@ public class Player {
 		return coins;
 	}
 	
+	public Hero getHero() {
+		return hero;
+	}
+
+	public void setHero(Hero hero) {
+		this.hero = hero;
+	}
+
 	public void setAllCards(ArrayList <Card> allCards) {
 		this.allCards = allCards;
 	}
@@ -219,5 +235,15 @@ public class Player {
 			decks.remove(index);
 			LogWriter.write(this, "Delete Deck", deck.getName());
 		}
+	}
+
+	private ArrayList<Card> getAllGameCards() {
+		ArrayList<Card> cards = new ArrayList<>();
+		
+		File file = new File(System.getProperty("user.dir") + "/src/main/resources/Cards");
+		String[] files = file.list();
+		for(String fileName : files)	cards.add(Card.convert(fileName.substring(0, fileName.length()-5)));
+		
+		return cards;
 	}
 }

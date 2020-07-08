@@ -1,0 +1,13 @@
+{
+  "HP": 10,
+  "attack": 10,
+  "subType": "",
+  "manaCost": 10,
+  "name": "ColossusOfTheMoon",
+  "rarity": "Legendary",
+  "heroClass": "Neutral",
+  "type": "Minion",
+  "description": "Divine Shield Reborn",
+  "price": 18,
+  "useNum": 0
+}

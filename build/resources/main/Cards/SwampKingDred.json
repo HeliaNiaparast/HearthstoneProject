@@ -1,0 +1,13 @@
+{
+  "HP": 9,
+  "attack": 9,
+  "subType": "Beast",
+  "manaCost": 7,
+  "name": "SwampKingDred",
+  "rarity": "Legendary",
+  "heroClass": "Hunter",
+  "type": "Minion",
+  "description": "After your opponent plays a minion, attack it.",
+  "price": 15,
+  "useNum": 0
+}

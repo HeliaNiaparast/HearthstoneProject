@@ -4,9 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Timestamp;
 import java.util.Scanner;
 
 import javax.imageio.ImageIO;
@@ -21,6 +19,7 @@ import com.google.gson.GsonBuilder;
 
 import game.LogWriter;
 import game.Player;
+import main.Main;
 
 public class Login2 extends JPanel implements ActionListener {
 	private JTextField usernameField;
@@ -151,7 +150,7 @@ public class Login2 extends JPanel implements ActionListener {
 	}
 
 	public boolean check (String username, String password) {
-		File profile = new File("./Profiles/", username + ".json");
+		File profile = new File("./src/main/resources/Profiles/", username + ".json");
 		if(!profile.exists())	return false;
 		String jPlayer = "";
 		Player player = new Player();
@@ -174,7 +173,7 @@ public class Login2 extends JPanel implements ActionListener {
 	}
 
 	public boolean check (String username) {
-		File profile = new File("./Profiles/", username + ".json");
+		File profile = new File("./src/main/resources/Profiles/", username + ".json");
 		if(profile.exists())	return false;
 		return true;
 	}
@@ -198,7 +197,7 @@ public class Login2 extends JPanel implements ActionListener {
 	}
 	
 	public void setPlayer(String username, String password) {
-		File profile = new File("./Profiles/" + username + ".json");
+		File profile = new File("./src/main/resources/Profiles/" + username + ".json");
 		String jPlayer = "";
 		Player player = null;
 		

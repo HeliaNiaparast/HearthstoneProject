@@ -1,0 +1,13 @@
+{
+  "HP": 3,
+  "attack": 3,
+  "subType": "",
+  "manaCost": 5,
+  "name": "ArenaPatron",
+  "rarity": "Rare",
+  "heroClass": "Neutral",
+  "type": "Minion",
+  "description": "Overkill: Summon another Arena Patron.",
+  "price": 7,
+  "useNum": 0
+}

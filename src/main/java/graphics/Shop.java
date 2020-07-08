@@ -2,7 +2,6 @@ package graphics;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Rectangle;
@@ -25,6 +24,7 @@ import javax.swing.border.Border;
 import cards.Card;
 import game.LogWriter;
 import game.Player;
+import main.Main;
 
 public class Shop extends JPanel implements ActionListener {
 	private Game game;

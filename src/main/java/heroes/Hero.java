@@ -60,4 +60,8 @@ public class Hero {
 	public String getSpecialPower() {
 		return specialPower;
 	}	
+
+	public void getAttacked(int attack) {
+		HP -= attack;
+	}
 }

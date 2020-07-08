@@ -1,0 +1,10 @@
+{
+  "manaCost": 7,
+  "name": "KangorsEndlessArmy",
+  "rarity": "Legendary",
+  "heroClass": "Paladin",
+  "type": "Spell",
+  "description": "Resurrect 3 friendly Mechs. They keep any Magnetic upgrades.",
+  "price": 15,
+  "useNum": 0
+}

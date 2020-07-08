@@ -1,0 +1,10 @@
+{
+  "manaCost": 5,
+  "name": "Assassinate",
+  "rarity": "Free",
+  "heroClass": "Rogue",
+  "type": "Spell",
+  "description": "Destroy an enemy minion.",
+  "price": 5,
+  "useNum": 0
+}

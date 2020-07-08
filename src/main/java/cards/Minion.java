@@ -1,10 +1,40 @@
 package cards;
 
-public class Minion extends Card {
+public abstract class Minion extends Card {
 	private int HP;
 	private int attack;
 	private String subType;
+	private boolean taunt;
+	private boolean rush;
+	private boolean charge;
+	private boolean divineshield;
+	private boolean reborn;
+	private boolean windfury;
+	private boolean poisonous;
+	private boolean lifeSteal;
+	private boolean stealth;
+	private int attackCnt;
+	private int currentHP;
+	private int currentAttack;
+	private boolean isAlive;
 	
+	public Minion (){}
+	public Minion (int manaCost, String name, String rarity, String heroClass, String type, String description, 
+			int HP, int attack, int price, String subType){
+		setManaCost(manaCost);
+		setName(name);
+		setRarity(rarity);
+		setHeroClass(heroClass);
+		setType(type);
+		setDescription(description);
+		setPrice(price);
+		setHP(HP);
+		setAttack(attack);
+		setSubType(subType);
+		setCurrentAttack(attack);
+		setCurrentHP(HP);
+	}
+
 	public String getSubType() {
 		return subType;
 	}
@@ -29,18 +59,139 @@ public class Minion extends Card {
 		return attack;
 	}
 	
-	public Minion (){}
-	public Minion (int manaCost, String name, String rarity, String heroClass, String type, String description, 
-			int HP, int attack, int price, String subType){
-		setManaCost(manaCost);
-		setName(name);
-		setRarity(rarity);
-		setHeroClass(heroClass);
-		setType(type);
-		setDescription(description);
-		setPrice(price);
-		setHP(HP);
-		setAttack(attack);
-		setSubType(subType);
+	public boolean isTaunt() {
+		return taunt;
+	}
+
+	public void setTaunt(boolean taunt) {
+		this.taunt = taunt;
+	}
+
+	public boolean isRush() {
+		return rush;
+	}
+
+	public void setRush(boolean rush) {
+		this.rush = rush;
+	}
+
+	public boolean isCharge() {
+		return charge;
+	}
+
+	public void setCharge(boolean charge) {
+		this.charge = charge;
+	}
+
+	public boolean isDivineshield() {
+		return divineshield;
+	}
+
+	public void setDivineshield(boolean divineshield) {
+		this.divineshield = divineshield;
+	}
+
+	public boolean isReborn() {
+		return reborn;
+	}
+
+	public void setReborn(boolean reborn) {
+		this.reborn = reborn;
+	}
+
+	public boolean isWindfury() {
+		return windfury;
+	}
+
+	public void setWindfury(boolean windfury) {
+		this.windfury = windfury;
+	}
+
+	public boolean isPoisonous() {
+		return poisonous;
+	}
+
+	public void setPoisonous(boolean poisonous) {
+		this.poisonous = poisonous;
+	}
+
+	public int getCurrentHP() {
+		return currentHP;
+	}
+
+	public void setCurrentHP(int currentHP) {
+		this.currentHP = currentHP;
+	}
+
+	public int getCurrentAttack() {
+		return currentAttack;
+	}
+
+	public void setCurrentAttack(int currentAttack) {
+		this.currentAttack = currentAttack;
+	}
+
+	public boolean isLifeSteal() {
+		return lifeSteal;
+	}
+
+	public void setLifeSteal(boolean lifeSteal) {
+		this.lifeSteal = lifeSteal;
+	}
+
+	public boolean isStealth() {
+		return stealth;
+	}
+
+	public void setStealth(boolean stealth) {
+		this.stealth = stealth;
+	}
+	
+	public int getAttackCnt() {
+		return attackCnt;
+	}
+	
+	public void setAttackCnt(int attackCnt) {
+		this.attackCnt = attackCnt;
+	}
+	
+	public void addAttack(int attack) {
+		currentAttack += attack;
+	}
+	
+	public void reduceAttack(int attack) {
+		currentAttack -= attack;
+	}
+	
+	public void addHP(int HP) {
+		currentHP += HP;
+	}
+	
+	public void reduceHP(int HP) {
+		currentAttack -= HP;
+	}
+	
+	public void setAlive(boolean isAlive) {
+		this.isAlive = isAlive;
+	}
+	
+	public boolean isAlive() {
+		return isAlive;
+	}
+	
+	public abstract void doDeathrattle();
+
+	public abstract void doOverkill();
+	
+	public void getAttacked(int attack) {
+		if(divineshield)	divineshield = false;
+		else {
+			currentHP -= attack;
+			if(currentHP <= 0) {
+				doDeathrattle();
+				if(reborn)	setCurrentHP(1);
+				else	isAlive = false;
+			}
+		}
 	}
 }

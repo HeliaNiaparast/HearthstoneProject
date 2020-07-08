@@ -1,0 +1,12 @@
+{
+  "attack": 2,
+  "durability": 2,
+  "manaCost": 1,
+  "name": "BattleAxe",
+  "rarity": "Common",
+  "heroClass": "Neutral",
+  "type": "Weapon",
+  "description": "",
+  "price": 2,
+  "useNum": 0
+}

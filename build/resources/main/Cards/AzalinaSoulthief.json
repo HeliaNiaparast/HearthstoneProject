@@ -1,0 +1,13 @@
+{
+  "HP": 3,
+  "attack": 3,
+  "subType": "",
+  "manaCost": 7,
+  "name": "AzalinaSoulthief",
+  "rarity": "Legendary",
+  "heroClass": "Neutral",
+  "type": "Minion",
+  "description": "Battlecry: Replace your hand with a copy of your opponent\u0027s.",
+  "price": 15,
+  "useNum": 0
+}

@@ -110,15 +110,6 @@ public class Card implements Comparable<Card> {
 	}
 	
 	public Card (){}
-	
-	public Card (int manaCost, String name, String rarity, String heroClass, String type, String description){
-		this.manaCost = manaCost;
-		this.name = name;
-		this.rarity = rarity;
-		this.heroClass = heroClass;
-		this.type = type;
-		this.description = description;	
-	}
 
 	@Override
 	public int compareTo(Card card) {

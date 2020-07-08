@@ -19,6 +19,7 @@ import javax.swing.border.Border;
 
 import game.LogWriter;
 import game.Player;
+import main.Main;
 
 public class Menu extends JPanel implements ActionListener {
 	

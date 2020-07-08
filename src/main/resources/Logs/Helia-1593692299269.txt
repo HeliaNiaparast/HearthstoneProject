@@ -1,0 +1,10 @@
+Username: Helia
+Created at: 2020-07-02 16:48:19.323
+Password: 123
+
+Navigate 2020-07-02 16:48:23.692 Collections
+Add Deck 2020-07-02 16:48:35.03 Hello
+Create Deck 2020-07-02 16:48:35.03 Hello
+See Deck 2020-07-02 16:48:38.301 Hello
+Navigate 2020-07-02 16:48:43.76 Menu
+Exit 2020-07-02 16:48:44.89 

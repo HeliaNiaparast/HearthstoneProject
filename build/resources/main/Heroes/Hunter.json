@@ -1,0 +1,21 @@
+{
+  "cards": [
+    {
+      "HP": 9,
+      "attack": 9,
+      "subType": "Beast",
+      "manaCost": 7,
+      "name": "SwampKingDred",
+      "rarity": "Legendary",
+      "heroClass": "Hunter",
+      "type": "Minion",
+      "description": "After your opponent plays a minion, attack it.",
+      "price": 15,
+      "useNum": 0
+    }
+  ],
+  "HP": 30,
+  "heroClass": "Hunter",
+  "heroPower": "Passive. After your opponent plays a Minion deal 1 damage to it",
+  "specialPower": "All of its Minions have Rush"
+}

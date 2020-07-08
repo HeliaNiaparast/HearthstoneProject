@@ -1,0 +1,10 @@
+{
+  "manaCost": 5,
+  "name": "GnomishArmyKnife",
+  "rarity": "Free",
+  "heroClass": "Paladin",
+  "type": "Spell",
+  "description": "Give a minion Charge, Windfury, Divine Shield, Lifesteal, Poisonous, Taunt, and Stealth.",
+  "price": 5,
+  "useNum": 0
+}

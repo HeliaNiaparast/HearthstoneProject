@@ -25,6 +25,7 @@ import javax.swing.border.Border;
 import cards.Deck;
 import game.LogWriter;
 import game.Player;
+import main.Main;
 
 public class Status extends JPanel implements ActionListener {
 

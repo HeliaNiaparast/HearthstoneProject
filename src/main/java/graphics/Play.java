@@ -26,6 +26,7 @@ import cards.Card;
 import cards.Deck;
 import game.LogWriter;
 import game.Player;
+import main.Main;
 
 public class Play extends JPanel {
 	

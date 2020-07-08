@@ -1,0 +1,18 @@
+{
+  "cards": [
+    {
+      "manaCost": 5,
+      "name": "GnomishArmyKnife",
+      "rarity": "Free",
+      "heroClass": "Paladin",
+      "type": "Spell",
+      "description": "Give a minion Charge, Windfury, Divine Shield, Lifesteal, Poisonous, Taunt, and Stealth.",
+      "price": 5,
+      "useNum": 0
+    }
+  ],
+  "HP": 30,
+  "heroClass": "Paladin",
+  "heroPower": "Plays two 1/1 Minions at the cost of 2 manas",
+  "specialPower": "At the end of each turn randomly adds a +1/+1 to one of its Minions"
+}

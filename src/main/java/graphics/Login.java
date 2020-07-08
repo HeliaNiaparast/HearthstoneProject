@@ -10,6 +10,8 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import main.Main;
+
 public class Login extends JPanel implements ActionListener {
 	private Game game;
 	
