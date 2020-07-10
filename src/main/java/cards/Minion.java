@@ -4,19 +4,20 @@ public abstract class Minion extends Card {
 	private int HP;
 	private int attack;
 	private String subType;
-	private boolean taunt;
-	private boolean rush;
-	private boolean charge;
-	private boolean divineshield;
-	private boolean reborn;
-	private boolean windfury;
-	private boolean poisonous;
-	private boolean lifeSteal;
-	private boolean stealth;
+	private boolean taunt = false;
+	private boolean rush = false;
+	private boolean charge = false;
+	private boolean divineshield = false;
+	private boolean reborn = false;
+	private boolean windfury = false;
+	private boolean poisonous = false;
+	private boolean lifeSteal = false;
+	private boolean stealth = false;
+	private boolean deathrattle = false;
 	private int attackCnt;
 	private int currentHP;
 	private int currentAttack;
-	private boolean isAlive;
+	private boolean isAlive = true;
 	
 	public Minion (){}
 	public Minion (int manaCost, String name, String rarity, String heroClass, String type, String description, 
@@ -179,9 +180,27 @@ public abstract class Minion extends Card {
 		return isAlive;
 	}
 	
+	public boolean isDeathrattle() {
+		return deathrattle;
+	}
+	
+	public void setDeathrattle(boolean deathrattle) {
+		this.deathrattle = deathrattle;
+	}
+	
 	public abstract void doDeathrattle();
 
 	public abstract void doOverkill();
+
+	public abstract void doBattlecry();
+	
+	public abstract void doEndOfTurnAction();
+
+	public void attackMinion(Minion minion){
+		this.getAttacked(minion.getAttack());
+		minion.getAttacked(attack);
+		attackCnt ++;
+	}
 	
 	public void getAttacked(int attack) {
 		if(divineshield)	divineshield = false;

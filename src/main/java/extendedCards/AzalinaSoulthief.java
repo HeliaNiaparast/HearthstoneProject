@@ -3,18 +3,19 @@ package extendedCards;
 import cards.Minion;
 import gameLogic.Game;
 
-public class ArenaPatron extends Minion {
+public class AzalinaSoulthief extends Minion {
+
 	private Game game;
 	
-	public ArenaPatron () {
+	public AzalinaSoulthief() {
 		game = Game.getInstance();
-		setManaCost(5);
-		setName("ArenaPatron");
-		setRarity("Rare");
+		setManaCost(7);
+		setName("AzalinaSoulthief");
+		setRarity("Legendary");
 		setHeroClass("Neutral");
 		setType("Minion");
-		setDescription("Overkill: Summon another Arena Patron.");
-		setPrice(7);
+		setDescription("Battlecry: Replace your hand with a copy of your opponent's.");
+		setPrice(15);
 		setHP(3);
 		setAttack(3);
 		setSubType("");
@@ -23,15 +24,14 @@ public class ArenaPatron extends Minion {
 		setTaunt(false);
 		setAlive(true);
 	}
-
+	
 	public void doDeathrattle() {}
 
-	public void doOverkill() {
-		game.summon(new ArenaPatron());
+	public void doOverkill() {}
+
+	public void doBattlecry() {
+		game.replaceHand();
 	}
 
-	public void doBattlecry() {}
-
 	public void doEndOfTurnAction() {}
-
 }

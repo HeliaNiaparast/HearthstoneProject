@@ -21,7 +21,7 @@ public class Abomination extends Minion {
 		setCurrentAttack(getAttack());
 		setCurrentHP(getHP());
 		setTaunt(true);
-		setAlive(true);
+		setDeathrattle(true);
 	}
 
 	public void doDeathrattle() {
@@ -29,5 +29,9 @@ public class Abomination extends Minion {
 	}
 
 	public void doOverkill() {}
+
+	public void doBattlecry() {}
+
+	public void doEndOfTurnAction() {}
 
 }

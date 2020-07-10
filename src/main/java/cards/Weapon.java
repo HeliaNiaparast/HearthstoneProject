@@ -17,9 +17,9 @@ public class Weapon extends Card {
 		this.durability = durability;
 	}
 	
-	Weapon (){}
+	public Weapon (){}
 	
-	Weapon (int manaCost, String name, String rarity, String heroClass, String type, String description, int attack, int durability, int price){
+	public Weapon (int manaCost, String name, String rarity, String heroClass, String type, String description, int attack, int durability, int price){
 		setManaCost(manaCost);
 		setName(name);
 		setRarity(rarity);

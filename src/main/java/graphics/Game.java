@@ -65,4 +65,8 @@ public class Game extends JPanel {
 		status = new Status(player);
 		this.add(status, "Status");
 	}
+
+	public Player getPlayer() {
+		return player;
+	}
 }
