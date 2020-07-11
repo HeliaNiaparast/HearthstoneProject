@@ -66,6 +66,11 @@ public class Game {
 		return copy;
 	}
 
+	public void draw() {
+		ArrayList<Card> cards = currentPlayer().getDeck().getCards();
+		if(!cards.isEmpty())	draw(cards.get(0));
+	}
+	
 	public void draw(String condition) {
 		switch(condition) {
 		case "Rush":
@@ -92,5 +97,48 @@ public class Game {
 		GamePlayer player = currentPlayer();
 		player.getHand().add(card);
 		player.getDeck().remove(card);
+	}
+
+	public void destroyAllOtherMinions(Minion minion) {
+		players[1-currentPlayerIndex()].getGround().clear();
+		for(Minion groundMinion : players[currentPlayerIndex()].getGround())
+			if(!groundMinion.equals(minion))
+				players[currentPlayerIndex()].getGround().remove(groundMinion);
+	}
+
+	public void discardHand() {
+		players[currentPlayerIndex()].getHand().clear();
+	}
+
+	public void damageAllOtherCharacters(int damage, Minion minion) {
+		for(GamePlayer player : players) {
+			player.getHero().getAttacked(damage);
+			for(Minion groundMinion : player.getGround())
+				if(!groundMinion.equals(minion))
+					groundMinion.getAttacked(damage);
+		}
+	}
+
+	public void damageAllOtherMinions(int damage, Minion minion) {
+		for(GamePlayer player : players) 
+			for(Minion groundMinion : player.getGround())
+				if(!groundMinion.equals(minion))
+					groundMinion.getAttacked(damage);
+	}
+
+	public void gainForFriendlyMinions(int attack, int HP) {
+		for(Minion minion : players[currentPlayerIndex()].getGround()) {
+			minion.addHP(HP);
+			minion.addAttack(attack);
+		}	
+	}
+
+	public boolean gainForFriendlyBeast(int attack, int HP, boolean Taunt, Minion minion) {
+		if(minion.getSubType().equals("Beast") && currentPlayer().getGround().contains(minion)) {
+			minion.addAttack(attack);
+			minion.addHP(HP);
+			return true;
+		}
+		return false;
 	}
 }

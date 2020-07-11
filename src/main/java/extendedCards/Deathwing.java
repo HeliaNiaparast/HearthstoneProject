@@ -1,12 +1,17 @@
 package extendedCards;
 
 import cards.Minion;
+import gameLogic.Game;
 
 public class Deathwing extends Minion {
+	
+	private Game game;
+	
 	public Deathwing() {
+		game = Game.getInstance();
 		setHP(12);
 		setAttack(12);
-		setSubType("");
+		setSubType("Dragon");
 		setManaCost(10);
 		setName("Deathwing");
 		setRarity("Legendary");
@@ -20,7 +25,10 @@ public class Deathwing extends Minion {
 
 	public void doOverkill() {}
 
-	public void doBattlecry() {}
+	public void doBattlecry() {
+		game.destroyAllOtherMinions(this);
+		game.discardHand();
+	}
 
 	public void doEndOfTurnAction() {}
 

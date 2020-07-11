@@ -6,7 +6,7 @@ public class BullDozer extends Minion {
 	public BullDozer() {
 		setHP(7);
 		setAttack(9);
-		setSubType("");
+		setSubType("Mech");
 		setManaCost(9);
 		setName("BullDozer");
 		setRarity("Common");
