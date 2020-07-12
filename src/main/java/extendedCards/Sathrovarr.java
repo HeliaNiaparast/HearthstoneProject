@@ -1,13 +1,9 @@
 package extendedCards;
 
 import cards.Minion;
-import gameLogic.Game;
 
 public class Sathrovarr extends Minion {
-	private Game game;
-	
 	public Sathrovarr() {
-		game = Game.getInstance();
 		setHP(5);
 		setAttack(5);
 		setSubType("Demon");

@@ -1,8 +1,8 @@
 package game;
 
-import java.util.*;
-import cards.*;
-import heroes.*;
+import java.util.ArrayList;
+
+import cards.Card;
 
 public class Shop {
 	private ArrayList <Card> cards;

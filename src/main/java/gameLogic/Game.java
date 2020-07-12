@@ -1,15 +1,20 @@
 package gameLogic;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Random;
 
 import cards.Card;
 import cards.Minion;
+import cards.Spell;
 import game.Player;
 
 public class Game {
 	private static Game game;
 	GamePlayer[] players;
 	ArrayList<Card> history;
+	ArrayList<Pair> deadMinions;
+	ArrayList<Minion> controlledMinions;
 	
 	private Game() {
 		players = new GamePlayer[2];
@@ -24,6 +29,18 @@ public class Game {
 		return game;
 	}
 	
+	public ArrayList<Minion> getControlledMinions() {
+		return controlledMinions;
+	}
+
+	public void setControlledMinions(ArrayList<Minion> controlledMinions) {
+		this.controlledMinions = controlledMinions;
+	}
+
+	public GamePlayer[] getPlayers() {
+		return players;
+	}
+
 	public void damageAllCharacters(int damage) {
 		for(GamePlayer player : players) {
 			player.getHero().getAttacked(damage);
@@ -140,5 +157,106 @@ public class Game {
 			return true;
 		}
 		return false;
+	}
+
+	public void damageEnemyHero(int damage) {
+		players[1-currentPlayerIndex()].getHero().getAttacked(damage);
+	}
+
+	public boolean isEnemy(Minion minion) {
+		if(players[1-currentPlayerIndex()].getGround().contains(minion))	return true;
+		return false;
+	}
+
+	public void destroyMinion(Minion minion) {
+		minion.getAttacked(minion.getCurrentHP());
+	}
+
+	public Minion getRandomEnemyMinion() {
+		Random random = new Random(System.nanoTime());
+		int index = random.nextInt(players[1-currentPlayerIndex()].getGround().size());
+		return	players[1-currentPlayerIndex()].getGround().get(index);
+	}
+
+	public Minion getRandomMinionFromHand() {
+		Random random = new Random(System.nanoTime());
+		ArrayList<Minion> handMinions = new ArrayList<>();
+		for(Card card : currentPlayer().getHand())
+			if(card instanceof Minion)
+				handMinions.add((Minion)card);
+		
+		int index = random.nextInt(handMinions.size());
+		return handMinions.get(index);
+		
+	}
+
+	public void resurrectFriendlyMechs(int cnt) {
+		ArrayList<Minion> deadMechs = new ArrayList<>();
+		for(Pair pair : deadMinions)
+			if(pair.getMinion().getSubType().equals("Mech") && pair.getString().equals("Friendly"))
+				deadMechs.add(pair.getMinion());
+		
+		for(int i = 0; i < Math.min(cnt, deadMechs.size()); i++) {
+			Minion minion = deadMechs.get(0);
+			minion.setCurrentAttack(minion.getAttack());
+			minion.setCurrentHP(minion.getHP());
+			currentPlayer().getGround().add(minion);
+			deadMechs.remove(0);
+		}
+	}
+
+	public void transform(Minion original, Minion replacement) {
+		ArrayList<Minion> ground;
+		if(players[currentPlayerIndex()].getGround().contains(original))
+			ground = players[currentPlayerIndex()].getGround();
+		else	ground = players[1-currentPlayerIndex()].getGround();
+		
+		ground.set(ground.indexOf(original), replacement);
+		
+	}
+
+	public void addToControlledMinions(Minion minion) {
+		controlledMinions.add(minion);
+	}
+
+	public void damageAllMinions(int damage) {
+		for(GamePlayer player : players)
+			for(Minion minion : player.getGround())
+				minion.getAttacked(damage);
+	}
+
+	public void drawCardsDiscardSpells(int cnt) {
+		for(int i = 0; i < cnt; i++) {
+			ArrayList<Card> deck = currentPlayer().getDeck().getCards();
+			if(!deck.isEmpty()) {
+				if(deck.get(0) instanceof Spell)
+					deck.remove(0);
+				else	draw(deck.get(0));
+			}
+		}
+	}
+
+/**/	public Minion copyRandomMinionFromHand() {
+		ArrayList<Minion> minions = new ArrayList<>();
+		for(Card card : currentPlayer().getHand())
+			if(card instanceof Minion)
+				minions.add((Minion)card);
+		
+		if(minions.size() == 0)		return null;
+		else {
+			Random random = new Random();
+			int index = random.nextInt(minions.size());
+			Minion minion = minions.get(index);
+			try {
+				Class<?> minionClass = Class.forName(minion.getClass().getName());
+					Minion duplicate = (Minion) minionClass.getConstructors()[0].newInstance();
+					return duplicate;
+			}
+			catch (InstantiationException | IllegalAccessException | IllegalArgumentException
+					| InvocationTargetException | SecurityException | ClassNotFoundException e) {
+			}
+		}
+		
+		return null;
 	}
 }

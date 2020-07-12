@@ -3,27 +3,29 @@ package extendedCards;
 import cards.SpellWithoutTarget;
 import gameLogic.Game;
 
-public class Eureka extends SpellWithoutTarget {
+public class SwarmOfLocusts extends SpellWithoutTarget {
 
 	private Game game;
 	
-	public Eureka() {
+	public SwarmOfLocusts() {
 		game = Game.getInstance();
 		
 		setManaCost(6);
-		setName("Eureka");
+		setName("SwarmOfLocusts");
 		setRarity("Rare");
 		setHeroClass("Neutral");
 		setType("Spell");
-		setDescription("Summon a copy of a random minion from your hand.");
+		setDescription("Summon seven 1/1 Locusts with Rush.");
 		setPrice(8);
 		setEcho(false);
 		setDiscover(false);
 	}
+
 	
+	@Override
 	public void perform() {
-		if(game.copyRandomMinionFromHand() != null)
-			game.summon(game.copyRandomMinionFromHand());
+		for(int i = 0; i < 7; i++)
+			game.summon(new Locust());
 	}
 
 }
